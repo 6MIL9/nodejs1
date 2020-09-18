@@ -1,4 +1,3 @@
-import e from 'express';
 import React, { useContext } from 'react'
 import { useHistory, NavLink } from "react-router-dom";
 import { AuthContext } from '../context/AuthContext';
@@ -15,10 +14,10 @@ const Navbar = () => {
 
     return (
         <nav>
-            <div class="nav-wrapper">
-                <NavLink to="/" class="brand-logo">Сокращение ссылок</NavLink>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><NavLink to="/create">Содать</NavLink></li>
+            <div className="nav-wrapper blue darken-1" style={{ padding: '0 2rem' }}>
+                <span className="brand-logo">Сокращение ссылок</span>
+                <ul id="nav-mobile" className="right hide-on-med-and-down">
+                    <li><NavLink to="/create">Создать</NavLink></li>
                     <li><NavLink to="/links">Ссылки</NavLink></li>
                     <li><a to="#" onClick={logoutHandler}>Выйти</a></li>
                 </ul>

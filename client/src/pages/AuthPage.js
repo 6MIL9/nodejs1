@@ -16,6 +16,10 @@ const AuthPage = () => {
         clearError();
     }, [error, clearError, message])
 
+    useEffect(() => {
+        window.M.updateTextFields();
+    }, [])
+
     const changeHandler = (event) => {
         setForm({ ...form, [event.target.name]: event.target.value })
     }
@@ -44,11 +48,13 @@ const AuthPage = () => {
                         <span className="card-title">Авторизация</span>
                         <div>
                             <div className="input-field">
-                                <input placeholder="Введите email" id="email" type="text" name="email" className="yellow-input" onChange={changeHandler} />
+                                <input placeholder="Введите email" id="email" type="text" name="email" 
+                                value={form.email} className="yellow-input" onChange={changeHandler} />
                                 <label htmlFor="email">Email</label>
                             </div>
                             <div className="input-field">
-                                <input placeholder="Введите пароль" id="password" type="password" name="password" className="yellow-input" onChange={changeHandler} />
+                                <input placeholder="Введите пароль" id="password" type="password" name="password" 
+                                value={form.password} className="yellow-input" onChange={changeHandler} />
                                 <label htmlFor="password">Password</label>
                             </div>
                         </div>
