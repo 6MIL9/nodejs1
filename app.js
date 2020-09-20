@@ -11,6 +11,8 @@ app.use(cors());
 
 app.use('/api/auth', require('./routes/authRoutes'))
 app.use('/api/link', require('./routes/linkRoutes'))
+app.use('/t/', require('./routes/redirectRoutes'))
+
 
 const PORT = config.get('port') || 5000
 
